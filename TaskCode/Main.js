@@ -5,8 +5,7 @@ main();
 function main() {
     const kitchenData = JSON.parse(GetJSON(JSON_URL));
     OrderData(kitchenData);
-    ShowDefaultConfiguration(kitchenData);
-    console.log(kitchenData);
+    ShowDefaultKitchen(kitchenData);
 
 }
 
@@ -24,17 +23,41 @@ function OrderData(kitchenData) {
     });
 }
 
-function ShowDefaultConfiguration(kitchenData) {
+function ShowDefaultKitchen(kitchenData) {
     const canvas = document.getElementById('kitchenCanvas'),
     context = canvas.getContext('2d');
-    const Images = GetImages(kitchenData);
-
-}
-
-function GetImages(kitchenData) {
-
-}
-
-function GetImageSources() {
+    const defaultImages = GetDefaultImages(kitchenData);
     
+    defaultImages.forEach(image => {
+        image.onload = function() {
+            context.drawImage(image, 0, 0)
+        }
+    })
+}
+
+function GetDefaultImages(kitchenData) {
+    const imageSources = GetDefaultImageSources(kitchenData);
+    const images = [];
+
+    imageSources.forEach(source => {
+        const currentImage = new Image();
+        currentImage.src = source;
+        images.push(currentImage);
+    });
+
+    return images;
+}
+
+function GetDefaultImageSources(kitchenData) {
+    const defaultConfiguration = kitchenData.default_configuration;
+    const defaultImageSources = [];
+
+    for (let i = 0; i < kitchenData.layers.length; i++) {
+            const currentLayer = kitchenData.layers[i];
+            const configurationIndex = defaultConfiguration[i];
+            const imageSuffix = currentLayer.items[configurationIndex].imgSrc;
+            defaultImageSources.push(IMAGE_PREFIX + imageSuffix);
+    }
+
+    return defaultImageSources;
 }
