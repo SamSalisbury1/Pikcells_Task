@@ -2,13 +2,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Main.css">
     <title>Main Page</title>
 </head>
 <body>
-    <h1>Kitchen Planner</h1>
-    <p>Your Kitchen</p>
-    <canvas id="kitchenCanvas" width="1140" height="760" style="border:1px solid #000000;">
-    
+    <div class="TopBar">
+        <h1>Kitchen Planner</h1>
+    </div>
+    <canvas id="kitchenCanvas" class="Kitchen-Canvas" width="1140" height="760"></canvas>
+    <div class="Design-Choices">
+        <div class="Layer1">
+            <p>Layer 1</p>
+            <select class="Select-List" name="cars" id="Layer1_Select">
+                <option value="Matte Black">Matte Black</option>
+            </select>
+        </div>
+        <div class="Layer2">
+            <p>Layer 2</p>
+            <select class="Select-List" name="cars" id="Layer2_Select">
+                <option value="Matte Black">Matte Black</option>
+            </select>
+        </div>
+        <div class="Layer3">
+            <p>Layer 3</p>
+            <select class="Select-List" name="cars" id="Layer3_Select">
+                <option value="Matte Black">Matte Black</option>
+            </select>
+        </div>
+    </div>
+    <div class="Lower-Buttons-Container">
+        <button class="Lower-Button">Update Kitchen</button>
+        <button class="Lower-Button">Save Kitchen</button>
+    </div>
     <script src="Main.js"></script>
 </body>
 </html>
