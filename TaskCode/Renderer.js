@@ -4,6 +4,7 @@ class Renderer{
         context = canvas.getContext('2d');
     
         images.forEach(image => {
+            image.setAttribute('crossorigin', 'anonymous');
             image.onload = function() {
                 context.drawImage(image, 0, 0)
             }

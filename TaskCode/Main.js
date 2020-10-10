@@ -1,9 +1,6 @@
-import $ from "./jquery.module.js";
-import { renderer } from "./Renderer.js";
 import { initialiser } from "./Initialiser.js";
-import { constants } from "./Constants.js";
 import { uiHandler } from "./UIHandler.js";
-
+import { saveHandler } from "./SaveHandler.js";
 class Main {
     main() {
         initialiser.Initialise();
@@ -18,5 +15,5 @@ document.getElementById("Update_Button").onclick = function() {
 }
 
 document.getElementById("Save_Button").onclick = function() {
-    uiHandler.UpdateCanvas();
+    saveHandler.DownloadKitchenImage();
 }
