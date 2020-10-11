@@ -31,4 +31,12 @@ class UIHandler {
     }
 }
 
+document.getElementById("Update_Button").onclick = function() {
+    uiHandler.UpdateCanvas();
+}
+
+document.getElementById("Save_Button").onclick = function() {
+    saveHandler.DownloadKitchenImage();
+}
+
 export const uiHandler = new UIHandler();

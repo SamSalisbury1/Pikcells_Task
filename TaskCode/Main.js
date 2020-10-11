@@ -15,11 +15,3 @@ class Main {
 
 const main = new Main();
 main.main();
-
-document.getElementById("Update_Button").onclick = function() {
-    uiHandler.UpdateCanvas();
-}
-
-document.getElementById("Save_Button").onclick = function() {
-    saveHandler.DownloadKitchenImage();
-}
