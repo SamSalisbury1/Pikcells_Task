@@ -6,7 +6,7 @@ class Main {
     main() {
         // If user is using IE Take them to Not Supported Page.
         if (navigator.appVersion.indexOf("MSIE")!=-1) {
-            alert("Notice, you are using Internet Explorer features may not be fully supported.");
+            alert("Notice, you are using Internet Explorer some features may not be fully supported.");
         }
 
         initialiser.Initialise();
