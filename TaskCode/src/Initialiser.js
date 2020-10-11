@@ -4,13 +4,12 @@ import { data } from "./KitchenData.js";
 
 class Initialiser {
     Initialise() {
-        this.ShowDefaultKitchen();
         this.PopulateDropDownLists();
+        this.ShowDefaultKitchen();
     }
 
     ShowDefaultKitchen() {
-        const defaultImages = data.GetDefaultImages();
-        renderer.RenderKitchen(defaultImages);
+        renderer.RenderKitchen();
     }
 
     PopulateDropDownLists() {

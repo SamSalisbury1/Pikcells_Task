@@ -22,39 +22,20 @@ class KitchenData {
         return kitchenData;
     }
 
-    GetDefaultImages() {
-        const imageSources = this.GetDefaultImageSources();
-        const images = [];
-    
-        imageSources.forEach(source => {
-            const currentImage = new Image();
-            currentImage.src = source;
-            images.push(currentImage);
-        });
-    
-        return images;
-    }
-
-    GetDefaultImageSources() {
-        const defaultConfiguration = this.data.default_configuration;
-        const defaultImageSources = [];
-    
-        for (let i = 0; i < this.data.layers.length; i++) {
-                const currentLayer = this.data.layers[i];
-                const configurationIndex = defaultConfiguration[i];
-                const imageSuffix = currentLayer.items[configurationIndex].imgSrc;
-                defaultImageSources.push(constants.IMAGE_PREFIX + imageSuffix);
-        }
-    
-        return defaultImageSources;
-    }
-
     GetLayers() {
         return this.data.layers;
     }
 
     GetDefaultConfiguration() {
         return this.data.default_configuration;
+    }
+
+    GetImageSources() {
+        return [
+            constants.IMAGE_PREFIX + $("#Layer_1_Select").val(),
+            constants.IMAGE_PREFIX + $("#Layer_2_Select").val(),
+            constants.IMAGE_PREFIX + $("#Layer_3_Select").val()
+        ]
     }
 }
 

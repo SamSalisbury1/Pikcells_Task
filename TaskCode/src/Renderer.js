@@ -1,14 +1,19 @@
+import { data } from "./KitchenData.js";
+
 class Renderer{
-    RenderKitchen(images) {
+    RenderKitchen() {
         const canvas = $("#kitchen_Canvas").get(0),
         context = canvas.getContext('2d');
-    
-        images.forEach(image => {
+        const imageSources = data.GetImageSources();
+
+        for (let i = 0; i < data.GetLayers().length; i++) {
+            const image = new Image();
             image.setAttribute('crossorigin', 'anonymous');
             image.onload = function() {
-                context.drawImage(image, 0, 0)
+                context.drawImage(image, 0, 0);
             }
-        })
+            image.src = imageSources[i];
+        }
     }
 
     ClearKitchen() {
