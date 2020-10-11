@@ -1,4 +1,5 @@
 import { data } from "./KitchenData.js";
+import { constants } from "./Constants.js";
 
 class Renderer{
     RenderKitchen() {
@@ -7,6 +8,14 @@ class Renderer{
         const imageSources = data.GetImageSources();
 
         for (let i = 0; i < data.GetLayers().length; i++) {
+            if (i == constants.MAX_NUMBER_OF_LAYERS) {
+                alert ("Config file has more than " + constants.MAX_NUMBER_OF_LAYERS + 
+                    " layers, a maximum of " + constants.MAX_NUMBER_OF_LAYERS +  
+                    " layers is currently supported.");
+
+                    return;
+            }
+
             const image = new Image();
             image.setAttribute('crossorigin', 'anonymous');
             image.onload = function() {
