@@ -4,3 +4,6 @@ Secondary Text Colour: #1a1c20
 Background Colour: #1a1c20
 Legacy Background Colour: #cf7500
 Button Colour: #f4f4f4
+
+External Libraries used:
+JQuery

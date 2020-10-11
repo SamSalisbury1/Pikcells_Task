@@ -34,12 +34,12 @@ class Initialiser {
     ShowDefaultDropDownSelection() {
         const defaultConfig = data.GetDefaultConfiguration();
 
-        const box1 = document.getElementById('Layer_1_Select');
-        box1.value = box1.options[defaultConfig[0]].value;
-        const box2 = document.getElementById('Layer_2_Select');
-        box2.value = box2.options[defaultConfig[1]].value;
-        const box3 = document.getElementById('Layer_3_Select');
-        box3.value = box3.options[defaultConfig[2]].value;
+        const layer1Select = document.getElementById('Layer_1_Select');
+        layer1Select.value = layer1Select.options[defaultConfig[0]].value;
+        const layer2Select = document.getElementById('Layer_2_Select');
+        layer2Select.value = layer2Select.options[defaultConfig[1]].value;
+        const layer3Select = document.getElementById('Layer_3_Select');
+        layer3Select.value = layer3Select.options[defaultConfig[2]].value;
     }
 }
 
