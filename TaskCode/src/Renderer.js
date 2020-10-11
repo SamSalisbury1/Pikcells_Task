@@ -9,10 +9,7 @@ class Renderer{
 
         for (let i = 0; i < data.GetLayers().length; i++) {
             if (i == constants.MAX_NUMBER_OF_LAYERS) {
-                alert ("Config file has more than " + constants.MAX_NUMBER_OF_LAYERS + 
-                    " layers, a maximum of " + constants.MAX_NUMBER_OF_LAYERS +  
-                    " layers is currently supported.");
-
+                alert ("Config file exceeded maximum of " + constants.MAX_NUMBER_OF_LAYERS + " Layers.");
                     return;
             }
 
