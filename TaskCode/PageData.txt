@@ -1,4 +1,6 @@
-Top Bar Colour: #1a1c20
-Text Colour: #f4f4f4
-Background Colour: #cf7500
-Button Colour: #f0a500
+Top Bar Colour: #31343c
+Primary Text Color: #f4f4f4
+Secondary Text Colour: #1a1c20
+Background Colour: #1a1c20
+Legacy Background Colour: #cf7500
+Button Colour: #f4f4f4
